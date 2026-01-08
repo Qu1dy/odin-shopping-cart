@@ -25,10 +25,9 @@ const SearchBar = ({ onSearch }) => {
                 className={styles["search-bar"]}
             />
             <button
-                className={styles.btn}
+                className={`${styles.btn} lucide-button`}
                 type="submit"
                 aria-label="Search game"
-                style={{ background: "none", border: "none", lineHeight: 0 }}
             >
                 <Search size={20} />
             </button>

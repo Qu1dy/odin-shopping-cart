@@ -22,9 +22,11 @@ const Layout = () => {
     return (
         <>
             <Header handleSearch={handleSearch} />
-            <Outlet
-                context={{ data, error, loading, cartItems, setCartItems }}
-            ></Outlet>
+            <main>
+                <Outlet
+                    context={{ data, error, loading, cartItems, setCartItems }}
+                ></Outlet>
+            </main>
         </>
     );
 };
