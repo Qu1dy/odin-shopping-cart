@@ -6,17 +6,17 @@ const NavBar = () => (
         <ul className={styles.nav}>
             <li className={styles["nav-item"]}>
                 <Link to="/" className={styles.icon}>
-                    <Home size={16} />
+                    <Home size={18} />
                 </Link>
             </li>
             <li>
                 <Link to="/shop" className={styles.icon}>
-                    <Store size={16} />
+                    <Store size={18} />
                 </Link>
             </li>
             <li>
                 <Link to="/cart" className={styles.icon}>
-                    <ShoppingCart size={16} />
+                    <ShoppingCart size={18} />
                 </Link>
             </li>
         </ul>

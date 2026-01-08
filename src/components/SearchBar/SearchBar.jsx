@@ -1,7 +1,7 @@
 import styles from "./SearchBar.module.css";
 import { Search } from "lucide-react";
 import { useState } from "react";
-import LucideButton from "../LucideButton";
+import PropTypes from "prop-types";
 
 const SearchBar = ({ onSearch }) => {
     const [inputValue, setInputValue] = useState("");
@@ -10,8 +10,13 @@ const SearchBar = ({ onSearch }) => {
         setInputValue(event.target.value);
     };
 
+    const onSubmit = (e) => {
+        e.preventDefault();
+        onSearch(inputValue);
+    };
+
     return (
-        <form className={styles.search} onSubmit={onSearch}>
+        <form className={styles.search} onSubmit={onSubmit}>
             <input
                 type="search"
                 placeholder="Search games..."
@@ -19,9 +24,20 @@ const SearchBar = ({ onSearch }) => {
                 onChange={handleInputChange}
                 className={styles["search-bar"]}
             />
-            <LucideButton Icon={<Search size={20} />}></LucideButton>
+            <button
+                className={styles.btn}
+                type="submit"
+                aria-label="Search game"
+                style={{ background: "none", border: "none", lineHeight: 0 }}
+            >
+                <Search size={20} />
+            </button>
         </form>
     );
+};
+
+SearchBar.propTypes = {
+    onSearch: PropTypes.func.isRequired,
 };
 
 export default SearchBar;
