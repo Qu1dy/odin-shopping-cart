@@ -1,0 +1,18 @@
+.nav {
+    list-style-type: none;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.nav-item {
+    color: var(--text);
+
+    &:hover {
+        color: var(--secondary);
+    }
+}
+
+.icon {
+    color: var(--text);
+}

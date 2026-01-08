@@ -1,0 +1,19 @@
+.search {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.search-bar {
+    background-color: var(--primary-color);
+    border-radius: 16px;
+    padding: 2px 4px;
+    border: none;
+    width: 100px;
+
+    transition: width 0.5s cubic-bezier(0.83, 0.01, 0.01, 0.96);
+    &:focus {
+        outline: 2px solid white;
+        width: 250px;
+    }
+}

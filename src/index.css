@@ -1,0 +1,23 @@
+:root {
+    --bg-color: #061e29;
+    --primary-color: #1d546d;
+    --secondary-color: #5f9598;
+    --text: #f3f4f4;
+}
+
+:root,
+* {
+    font-family: "Roboto", sans-serif;
+    color: var(--text);
+}
+
+#root {
+    background-color: #061e29;
+    max-width: 1600px;
+    padding: 0 100px;
+    min-height: 100vh;
+}
+
+button {
+    cursor: pointer;
+}
