@@ -11,10 +11,16 @@
     color: var(--text);
 }
 
-#root {
+body {
     background-color: #061e29;
+    display: flex;
+    justify-content: center;
+}
+
+#root {
     max-width: 1600px;
-    padding: 0 100px;
+    flex: 1;
+    padding: 0px 100px;
     min-height: 100vh;
 }
 
