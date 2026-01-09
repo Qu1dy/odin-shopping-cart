@@ -24,6 +24,7 @@ const AddToCartControls = ({
                     <RotateCcwIcon
                         className={styles.back}
                         color={"hsl(0,60%,40%)"}
+                        aria-label="Undo"
                         strokeWidth={2.5}
                     />
                 </button>

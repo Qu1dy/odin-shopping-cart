@@ -1,0 +1,62 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`NumberButton > should render decrease button, quantity, and increase button 1`] = `
+<div>
+  <div
+    class="_container_967b74"
+  >
+    <button
+      aria-label="Decrease quantity"
+      class="_btn_967b74 lucide-button"
+    >
+      <svg
+        aria-hidden="true"
+        class="lucide lucide-minus"
+        fill="none"
+        height="20"
+        stroke="black"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="20"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M5 12h14"
+        />
+      </svg>
+    </button>
+    <span
+      class="_quantity_967b74"
+    >
+      1
+    </span>
+    <button
+      aria-label="Increase quantity"
+      class="_btn_967b74 lucide-button"
+    >
+      <svg
+        aria-hidden="true"
+        class="lucide lucide-plus"
+        fill="none"
+        height="20"
+        stroke="black"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="20"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M5 12h14"
+        />
+        <path
+          d="M12 5v14"
+        />
+      </svg>
+    </button>
+  </div>
+</div>
+`;

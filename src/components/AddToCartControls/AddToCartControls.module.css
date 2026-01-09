@@ -17,6 +17,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 6px;
+    border-left: 6px solid color-mix(in srgb, var(--secondary), 40% lightgreen);
     gap: 4px;
     background-color: color-mix(in srgb, var(--primary), 20% lightgreen);
     width: 100%;
