@@ -1,7 +1,7 @@
 :root {
     --bg-color: #061e29;
-    --primary-color: #1d546d;
-    --secondary-color: #5f9598;
+    --primary: #1d546d;
+    --secondary: #5f9598;
     --text: #f3f4f4;
 }
 
@@ -26,4 +26,14 @@ button {
     background: none;
     line-height: 0;
     border: none;
+    padding: 0;
+    margin: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 24px;
+}
+
+main {
+    padding: 2rem 0;
 }

@@ -2,6 +2,8 @@ import { createBrowserRouter } from "react-router";
 import Layout from "./Layout";
 import ErrorPage from "./components/ErrorPage";
 import Root from "./pages/Root";
+import ShopPage from "./pages/Shop";
+
 const router = createBrowserRouter([
     {
         path: "/",
@@ -11,6 +13,10 @@ const router = createBrowserRouter([
             {
                 index: true,
                 element: <Root />,
+            },
+            {
+                path: "/shop",
+                element: <ShopPage />,
             },
         ],
     },

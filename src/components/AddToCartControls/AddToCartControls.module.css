@@ -1,0 +1,23 @@
+.add-to-cart {
+    border: none;
+    background-color: var(--primary);
+    font-size: 1rem;
+    padding: 2px;
+    border-left: 6px solid color-mix(in srgb, var(--secondary), 10% blue);
+    border-radius: 6px;
+    box-shadow: 1px 1px 3px black;
+
+    transition: transform 0.25s ease-in-out;
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    background-color: color-mix(in srgb, var(--primary), 20% lightgreen);
+    width: 100%;
+}

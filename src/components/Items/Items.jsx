@@ -1,5 +1,6 @@
-import Item from "";
+import Item from "../Item";
 import PropTypes from "prop-types";
+import styles from "./Items.module.css";
 
 const Items = ({ data, loading, error, cartItems, setCartItems }) => {
     return (
@@ -12,13 +13,12 @@ const Items = ({ data, loading, error, cartItems, setCartItems }) => {
                         : "An error has occurred while fetching data."}
                 </h3>
             ) : (
-                <ul className={styles.container}>
+                <ul className={styles.items}>
                     {data.map((item) => (
                         <Item
                             key={item.id}
                             {...item}
                             cartItems={cartItems}
-                            inCart={inCart(item.id)}
                             setCartItems={setCartItems}
                         />
                     ))}

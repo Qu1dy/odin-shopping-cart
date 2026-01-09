@@ -1,0 +1,52 @@
+.card {
+    display: grid;
+    grid-template-rows: 200px 1fr auto;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+        "image image"
+        "title price"
+        "status action-button";
+    box-shadow: 2px 2px 6px black;
+    gap: 12px 30px;
+    padding: 16px;
+    border-radius: 8px;
+    background-image: linear-gradient(hsl(199, 74%, 15%), hsl(199, 74%, 20%));
+}
+
+.img-container {
+    grid-area: image;
+}
+
+.img {
+    height: 200px;
+    width: 100%;
+    border-radius: 16px;
+    object-fit: fill;
+    box-shadow: 2px 2px 6px black;
+}
+
+.price {
+    grid-area: price;
+    text-align: end;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.price,
+.title {
+    padding: 0 4px;
+}
+
+.title {
+    grid-area: title;
+    font-weight: 550;
+}
+
+.card > :nth-child(4) {
+    grid-area: status;
+}
+
+.card > :nth-child(5) {
+    grid-area: action-button;
+    justify-self: flex-end;
+}

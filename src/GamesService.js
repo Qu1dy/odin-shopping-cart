@@ -1,8 +1,10 @@
 const GamesService = (() => {
     const BASE_URL = "https://www.cheapshark.com/api/1.0/";
     const _getData = async (requestURL) => {
-        const result = await fetch(requestURL).text;
-        return JSON.parse(result);
+        console.log(requestURL);
+        const result = await fetch(requestURL);
+        const resText = await result.text();
+        return JSON.parse(resText);
     };
 
     const _buildDealURL = (dealID) =>
@@ -13,10 +15,10 @@ const GamesService = (() => {
         const data = await _getData(requestURL);
         return data.map(
             ({ gameID, cheapest, cheapestDealID, external, thumb }) => ({
-                id: gameID,
-                price: cheapest,
+                id: Number(gameID),
+                price: Number(cheapest),
                 dealURL: _buildDealURL(cheapestDealID),
-                name: external,
+                title: external,
                 imageURL: thumb,
             })
         );
