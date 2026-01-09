@@ -21,3 +21,11 @@
     background-color: color-mix(in srgb, var(--primary), 20% lightgreen);
     width: 100%;
 }
+
+.back {
+    transition: transform 1s ease-in-out;
+}
+
+.back:hover {
+    transform: rotate(0.5turn);
+}

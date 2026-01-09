@@ -14,13 +14,18 @@ const AddToCartControls = ({
         return (
             <>
                 <div className={styles.container}>
-                    <Check size={12} />
-                    <span className={styles.status} role="status">
-                        In cart ({quantity})
-                    </span>
+                    <Check size={16} />
+                    <span role="status">In cart ({quantity})</span>
                 </div>
-                <button className={`lucide-button`} onClick={onRemove}>
-                    <RotateCcwIcon className={styles.back} />
+                <button
+                    className={`lucide-button ${styles.back}`}
+                    onClick={onRemove}
+                >
+                    <RotateCcwIcon
+                        className={styles.back}
+                        color={"hsl(0,60%,40%)"}
+                        strokeWidth={2.5}
+                    />
                 </button>
             </>
         );
@@ -28,10 +33,7 @@ const AddToCartControls = ({
 
     return (
         <>
-            <button
-                className={`${styles["add-to-cart"]} ${styles.status}`}
-                onClick={onAdd}
-            >
+            <button className={styles["add-to-cart"]} onClick={onAdd}>
                 Add to cart
             </button>
             <NumberButton quantity={quantity} setQuantity={setQuantity} />
