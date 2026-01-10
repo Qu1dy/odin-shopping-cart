@@ -1,27 +1,75 @@
 .item {
     display: grid;
-    grid-template-columns: 1fr 4fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    padding: 16px;
+    background-color: hsl(198.75, 57.97%, 15%);
+    border-radius: 16px;
+    grid-template-columns: 300px 1fr auto;
     grid-template-areas:
-        "image title"
-        "image price"
-        "image action-button"
-        "image apply";
+        "image title remove-button"
+        "image price ."
+        "image . ."
+        "image quantity-button total";
+    gap: 8px 16px;
+    > :nth-child(4) {
+        grid-area: quantity-button;
+    }
+}
+
+.total {
+    grid-area: total;
+    font-size: 1.1rem;
+    font-weight: 600;
 }
 
 .img {
     composes: img from "../Item/Item.module.css";
     grid-area: image;
+    height: 130px;
 }
 
-.title {
-    grid-area: title;
+.title,
+.price {
+    line-height: 0.8;
 }
 
 .price {
     grid-area: price;
+    font-weight: 600;
+    font-size: 1.1rem;
 }
 
-.apply-quantity-form {
-    grid-area: apply;
+.title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    grid-area: title;
+    line-height: 1.1;
+}
+
+.apply {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    background-color: var(--secondary);
+    padding: 2px 6px;
+    height: 24px;
+    gap: 6px;
+    font-size: 1rem;
+    border-radius: 6px;
+    box-shadow: 2px 2px 1px black;
+
+    &:active {
+        background-color: color-mix(in srgb, var(--secondary), 15% white);
+    }
+}
+
+.remove {
+    border-radius: 4px;
+    border: none;
+    grid-area: remove-button;
+    max-width: 155px;
+    width: 26px;
+    height: 26px;
+    justify-self: flex-end;
 }

@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import NumberButton from "../NumberButton";
 import styles from "./CartItem.module.css";
+import { Trash } from "lucide-react";
 import { useState } from "react";
 
 const CartItem = ({
@@ -10,12 +11,14 @@ const CartItem = ({
     title,
     price,
     updateQuantity,
+    onRemove,
 }) => {
     const [quantity, setQuantity] = useState(savedQuantity);
+    const total = (quantity * price).toFixed(2);
 
-    const onSubmit = (e) => {
-        e.preventDefault();
-        updateQuantity(id, quantity);
+    const synchronizeQuantity = (newQuantity) => {
+        setQuantity(newQuantity);
+        updateQuantity(id, newQuantity);
     };
 
     return (
@@ -23,12 +26,21 @@ const CartItem = ({
             <img src={imageURL} alt="" className={styles.img} />
             <h3 className={styles.title}>{title}</h3>
             <data value={price} className={styles.price}>
-                ${price}
+                Price: ${price}
             </data>
-            <NumberButton quantity={quantity} setQuantity={setQuantity} />
-            <form onSubmit={onSubmit} className={styles["apply-quantity-form"]}>
-                <button></button>
-            </form>
+            <NumberButton
+                quantity={quantity}
+                setQuantity={synchronizeQuantity}
+            />
+            <button
+                onClick={onRemove}
+                className={`${styles.remove} lucide-button`}
+            >
+                <Trash size={20} color={"hsl(0, 65%, 35%)"} strokeWidth={3} />
+            </button>
+            <data value={total} className={styles.total}>
+                Total: ${total}
+            </data>
         </li>
     );
 };
@@ -40,6 +52,7 @@ CartItem.propTypes = {
     title: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
     updateQuantity: PropTypes.func.isRequired,
+    onRemove: PropTypes.func.isRequired,
 };
 
 export default CartItem;

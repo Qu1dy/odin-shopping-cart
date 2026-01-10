@@ -2,12 +2,7 @@ import { Home, ShoppingCart, Store } from "lucide-react";
 import styles from "./NavBar.module.css";
 import { Link } from "react-router";
 import PropTypes from "prop-types";
-const NavBar = ({ cartItems }) => {
-    const totalQuantity = cartItems.reduce(
-        (prev, current) => prev + current.quantity,
-        0
-    );
-
+const NavBar = ({ totalQuantity }) => {
     return (
         <nav>
             <ul className={styles.nav}>
@@ -33,7 +28,7 @@ const NavBar = ({ cartItems }) => {
 };
 
 NavBar.propTypes = {
-    cartItems: PropTypes.array.isRequired,
+    totalQuantity: PropTypes.number.isRequired,
 };
 
 export default NavBar;

@@ -1,5 +1,6 @@
 import { Plus, Minus } from "lucide-react";
 import styles from "./NumberButton.module.css";
+import PropTypes from "prop-types";
 
 const NumberButton = ({ quantity, setQuantity }) => {
     const onIncrease = () => {
@@ -19,7 +20,7 @@ const NumberButton = ({ quantity, setQuantity }) => {
                 className={`${styles.btn} lucide-button`}
                 aria-label="Decrease quantity"
             >
-                <Minus size={20} color={"black"} />
+                <Minus size={20} />
             </button>
             <span className={styles.quantity}>{quantity}</span>
             <button
@@ -27,10 +28,15 @@ const NumberButton = ({ quantity, setQuantity }) => {
                 aria-label="Increase quantity"
                 onClick={onIncrease}
             >
-                <Plus size={20} color={"black"} />
+                <Plus size={20} />
             </button>
         </div>
     );
+};
+
+NumberButton.propTypes = {
+    quantity: PropTypes.number.isRequired,
+    setQuantity: PropTypes.func.isRequired,
 };
 
 export default NumberButton;

@@ -16,7 +16,7 @@ const CartItems = ({ cartItems, setCartItems }) => {
 
     return (
         <>
-            <h2 className={styles.title}>Items</h2>
+            <h2 className={styles.title}>Cart items</h2>
             {cartItems.length ? (
                 <ul className={styles.items}>
                     {cartItems.map((item) => (

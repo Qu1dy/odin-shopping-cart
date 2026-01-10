@@ -9,6 +9,11 @@ const Layout = () => {
     const [cartItems, setCartItems] = useState([]);
     const navigate = useNavigate();
 
+    const totalQuantity = cartItems.reduce(
+        (prev, current) => prev + current.quantity,
+        0
+    );
+
     const handleSearch = async (query) => {
         navigate("/shop");
         setLoading(true);
@@ -25,7 +30,7 @@ const Layout = () => {
 
     return (
         <>
-            <Header handleSearch={handleSearch} cartItems={cartItems} />
+            <Header handleSearch={handleSearch} totalQuantity={totalQuantity} />
             <main>
                 <Outlet
                     context={{ data, error, loading, cartItems, setCartItems }}
