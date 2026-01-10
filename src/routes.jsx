@@ -3,6 +3,7 @@ import Layout from "./Layout";
 import ErrorPage from "./components/ErrorPage";
 import Root from "./pages/Root";
 import ShopPage from "./pages/Shop";
+import CartPage from "./pages/Cart";
 
 const router = createBrowserRouter([
     {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
             {
                 path: "/shop",
                 element: <ShopPage />,
+            },
+            {
+                path: "/cart",
+                element: <CartPage />,
             },
         ],
     },

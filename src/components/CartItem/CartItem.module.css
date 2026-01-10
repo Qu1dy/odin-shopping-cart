@@ -1,0 +1,27 @@
+.item {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+        "image title"
+        "image price"
+        "image action-button"
+        "image apply";
+}
+
+.img {
+    composes: img from "../Item/Item.module.css";
+    grid-area: image;
+}
+
+.title {
+    grid-area: title;
+}
+
+.price {
+    grid-area: price;
+}
+
+.apply-quantity-form {
+    grid-area: apply;
+}

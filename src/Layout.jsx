@@ -25,7 +25,7 @@ const Layout = () => {
 
     return (
         <>
-            <Header handleSearch={handleSearch} />
+            <Header handleSearch={handleSearch} cartItems={cartItems} />
             <main>
                 <Outlet
                     context={{ data, error, loading, cartItems, setCartItems }}

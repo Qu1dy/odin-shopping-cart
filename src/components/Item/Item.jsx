@@ -12,13 +12,14 @@ const Item = ({
     cartItems,
     setCartItems,
 }) => {
-    const [quantity, setQuantity] = useState(1);
+    const cartItem = cartItems.find((item) => item.id === id);
+    const inCart = !!cartItem;
+    //to synchronize between cart and shop page's quantity
+    const [quantity, setQuantity] = useState(cartItem ? cartItem.quantity : 1);
 
     const onAdd = () => {
         setCartItems([...cartItems, { quantity, id, imageURL, title, price }]);
     };
-
-    const inCart = cartItems.some((item) => item.id === id);
 
     const onRemove = () => {
         setCartItems(cartItems.filter((item) => item.id !== id));

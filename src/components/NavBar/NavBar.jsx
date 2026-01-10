@@ -1,26 +1,39 @@
 import { Home, ShoppingCart, Store } from "lucide-react";
 import styles from "./NavBar.module.css";
 import { Link } from "react-router";
-const NavBar = () => (
-    <nav>
-        <ul className={styles.nav}>
-            <li className={styles["nav-item"]}>
-                <Link to="/" className={styles.icon}>
-                    <Home size={18} />
-                </Link>
-            </li>
-            <li>
-                <Link to="/shop" className={styles.icon}>
-                    <Store size={18} />
-                </Link>
-            </li>
-            <li>
-                <Link to="/cart" className={styles.icon}>
-                    <ShoppingCart size={18} />
-                </Link>
-            </li>
-        </ul>
-    </nav>
-);
+import PropTypes from "prop-types";
+const NavBar = ({ cartItems }) => {
+    const totalQuantity = cartItems.reduce(
+        (prev, current) => prev + current.quantity,
+        0
+    );
+
+    return (
+        <nav>
+            <ul className={styles.nav}>
+                <li className={styles["nav-item"]}>
+                    <Link to="/" className={styles.icon}>
+                        <Home size={18} />
+                    </Link>
+                </li>
+                <li>
+                    <Link to="/shop" className={styles.icon}>
+                        <Store size={18} />
+                    </Link>
+                </li>
+                <li>
+                    <Link to="/cart" className={styles.icon}>
+                        <ShoppingCart size={18} />
+                    </Link>
+                    {totalQuantity}
+                </li>
+            </ul>
+        </nav>
+    );
+};
+
+NavBar.propTypes = {
+    cartItems: PropTypes.array.isRequired,
+};
 
 export default NavBar;

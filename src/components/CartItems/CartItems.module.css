@@ -1,0 +1,13 @@
+.title {
+    composes: title from "../Items/Items.module.css";
+}
+
+.items {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.status {
+    composes: status from "../Items/Items.module.css";
+}
