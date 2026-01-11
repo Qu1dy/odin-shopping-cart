@@ -2,6 +2,8 @@ import Header from "./components/Header";
 import { useState, useEffect } from "react";
 import { Outlet, useNavigate } from "react-router";
 import GamesService from "./GamesService";
+import Footer from "./components/Footer";
+
 const Layout = () => {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -14,13 +16,19 @@ const Layout = () => {
         0
     );
 
+    const getRandomLetter = () => {
+        const lowercaseAsciiStart = 97;
+        const letterIndex = Math.floor(Math.random() * 26);
+        const letter = String.fromCharCode(lowercaseAsciiStart + letterIndex);
+        return letter;
+    };
+
     useEffect(() => {
-        const search = async () => await handleSearch("minecraft");
+        const search = async () => await getGameData(getRandomLetter());
         search();
     }, []);
 
-    const handleSearch = async (query) => {
-        navigate("/shop");
+    const getGameData = async (query) => {
         setLoading(true);
         try {
             const result = await GamesService.getGames(query);
@@ -33,14 +41,23 @@ const Layout = () => {
         }
     };
 
+    const performGameSearch = async (query) => {
+        navigate("/shop");
+        await getGameData(query);
+    };
+
     return (
         <>
-            <Header handleSearch={handleSearch} totalQuantity={totalQuantity} />
+            <Header
+                handleSearch={performGameSearch}
+                totalQuantity={totalQuantity}
+            />
             <main>
                 <Outlet
                     context={{ data, error, loading, cartItems, setCartItems }}
-                ></Outlet>
+                />
             </main>
+            <Footer />
         </>
     );
 };

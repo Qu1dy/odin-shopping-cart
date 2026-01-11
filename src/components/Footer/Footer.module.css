@@ -1,0 +1,16 @@
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 3rem;
+    background-color: hsl(199, 74%, 4%);
+}
+
+.footerText {
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.link {
+    composes: highlighted from "../Home/Home.module.css";
+}

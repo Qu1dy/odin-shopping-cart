@@ -1,7 +1,5 @@
+import Home from "../components/Home";
 
-const Home = () => (
-    <>
-    </>
-);
+const Root = () => <Home />;
 
-export default Home;
+export default Root;
