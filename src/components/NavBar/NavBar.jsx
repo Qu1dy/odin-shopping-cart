@@ -20,7 +20,9 @@ const NavBar = ({ totalQuantity }) => {
                     <Link to="/cart" className={styles.icon}>
                         <ShoppingCart size={18} />
                     </Link>
-                    {totalQuantity}
+                    <data className={styles.total} value={totalQuantity}>
+                        {totalQuantity}
+                    </data>
                 </li>
             </ul>
         </nav>

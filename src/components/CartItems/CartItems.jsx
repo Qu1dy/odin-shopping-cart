@@ -14,9 +14,18 @@ const CartItems = ({ cartItems, setCartItems }) => {
         );
     };
 
+    const totalPrice = cartItems
+        .reduce((prev, current) => prev + current.price * current.quantity, 0)
+        .toFixed(2);
+
     return (
         <>
-            <h2 className={styles.title}>Cart items</h2>
+            <div className={styles["top-row"]}>
+                <h2 className={styles.title}>Cart items</h2>
+                <data className={styles.total} value={totalPrice}>
+                    Total: ${totalPrice}
+                </data>
+            </div>
             {cartItems.length ? (
                 <ul className={styles.items}>
                     {cartItems.map((item) => (

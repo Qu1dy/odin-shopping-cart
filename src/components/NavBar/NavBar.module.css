@@ -16,3 +16,10 @@
 .icon {
     color: var(--text);
 }
+
+.total {
+    background-color: var(--secondary);
+    border-radius: 32px;
+    padding: 2px;
+    font-size: 0.6rem;
+}
