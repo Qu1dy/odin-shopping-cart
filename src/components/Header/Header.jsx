@@ -6,7 +6,9 @@ import SearchBar from "../SearchBar";
 const Header = ({ handleSearch, totalQuantity }) => {
     return (
         <header className={styles.header}>
-            <h1 className={styles.title}>MEOW</h1>
+            <h1 className={styles.title}>
+                Shopping<span className={styles.coloured}>Cart</span>
+            </h1>
             <SearchBar onSearch={handleSearch} />
             <NavBar totalQuantity={totalQuantity} />
         </header>

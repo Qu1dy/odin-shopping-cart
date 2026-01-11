@@ -1,5 +1,5 @@
 import Header from "./components/Header";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Outlet, useNavigate } from "react-router";
 import GamesService from "./GamesService";
 const Layout = () => {
@@ -13,6 +13,11 @@ const Layout = () => {
         (prev, current) => prev + current.quantity,
         0
     );
+
+    useEffect(() => {
+        const search = async () => await handleSearch("minecraft");
+        search();
+    }, []);
 
     const handleSearch = async (query) => {
         navigate("/shop");
