@@ -1,5 +1,5 @@
 import Header from "./components/Header";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Outlet, useNavigate } from "react-router";
 import GamesService from "./GamesService";
 import Footer from "./components/Footer";
@@ -9,6 +9,7 @@ const Layout = () => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
     const [cartItems, setCartItems] = useState([]);
+    const initialized = useRef(false);
     const navigate = useNavigate();
 
     const totalQuantity = cartItems.reduce(
@@ -25,7 +26,10 @@ const Layout = () => {
 
     useEffect(() => {
         const search = async () => await getGameData(getRandomLetter());
-        search();
+        if (!initialized.current) {
+            search();
+            initialized.current = true;
+        }
     }, []);
 
     const getGameData = async (query) => {
