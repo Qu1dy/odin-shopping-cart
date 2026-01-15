@@ -1,6 +1,6 @@
 import Header from "./components/Header";
 import { useState, useEffect, useRef } from "react";
-import { Outlet, useNavigate } from "react-router";
+import { Outlet, useNavigate, useLocation } from "react-router";
 import GamesService from "./GamesService";
 import Footer from "./components/Footer";
 
@@ -11,6 +11,8 @@ const Layout = () => {
     const [cartItems, setCartItems] = useState([]);
     const initialized = useRef(false);
     const navigate = useNavigate();
+    const location = useLocation();
+    const currentPath = location.pathname;
 
     const totalQuantity = cartItems.reduce(
         (prev, current) => prev + current.quantity,
@@ -55,6 +57,7 @@ const Layout = () => {
             <Header
                 handleSearch={performGameSearch}
                 totalQuantity={totalQuantity}
+                currentPath={currentPath}
             />
             <main>
                 <Outlet

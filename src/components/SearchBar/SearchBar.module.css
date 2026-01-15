@@ -18,10 +18,6 @@
     }
 }
 
-.btn:hover {
-    color: var(--primary);
-}
-
 @media (width < 600px) {
     .search {
         position: fixed;
