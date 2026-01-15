@@ -29,3 +29,13 @@
     border-bottom: 4px solid oklch(0.6334 0.15 200.29);
     padding-bottom: 2px;
 }
+
+@media (width < 600px) {
+    .icon,
+    .cartLink {
+        height: 16px;
+    }
+    .nav {
+        gap: 10px;
+    }
+}
