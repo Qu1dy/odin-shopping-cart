@@ -16,11 +16,12 @@
 
 .hero {
     display: flex;
+    gap: 32px;
     justify-content: space-between;
 }
 
 .heroImage > img {
-    width: 500px;
+    max-width: 500px;
     border-radius: 16px;
     box-shadow: 2px 2px 12px black;
 }
@@ -28,4 +29,14 @@
 .p {
     max-width: 50ch;
     font-size: 1.1rem;
+}
+
+@media (width < 600px) {
+    .hero {
+        flex-direction: column;
+    }
+
+    .heroImage > img {
+        width: 100%;
+    }
 }
