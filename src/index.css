@@ -3,6 +3,7 @@
     --primary: #1d546d;
     --secondary: #5f9598;
     --text: #f3f4f4;
+    --mobile-margin: 16px;
 }
 
 :root,
@@ -20,24 +21,21 @@ body {
 #root {
     flex: 1;
     min-height: 100vh;
+    max-width: 100vw;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-main,
-footer,
-header {
-    width: 100%;
-}
-
 main {
     flex: 1;
+    padding: 2rem 0;
 }
 
 main,
 header {
     max-width: 1600px;
+    width: 100%;
 }
 
 button {
@@ -56,6 +54,18 @@ button {
     max-width: 24px;
 }
 
-main {
-    padding: 2rem 0;
+@media (width < 600px) {
+    main {
+        margin-left: var(--mobile-margin);
+        margin-right: var(--mobile-margin);
+    }
+
+    main,
+    header {
+        width: auto;
+    }
+
+    #root {
+        align-items: stretch;
+    }
 }

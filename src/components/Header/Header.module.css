@@ -3,6 +3,7 @@
     justify-content: space-between;
     align-items: center;
     padding-top: 1rem;
+    gap: 2rem;
     background-color: var(--bg-color);
 }
 
@@ -13,4 +14,11 @@
 
 .coloured {
     color: var(--secondary);
+}
+
+@media (width < 600px) {
+    .header {
+        margin-left: var(--mobile-margin);
+        margin-right: var(--mobile-margin);
+    }
 }

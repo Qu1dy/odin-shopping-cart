@@ -18,8 +18,9 @@
 }
 
 .img {
-    height: 200px;
+    height: 100%;
     width: 100%;
+    display: block;
     border-radius: 16px;
     display: block;
     object-fit: cover;
@@ -41,6 +42,8 @@
 .title {
     grid-area: title;
     font-weight: 550;
+    max-width: 12ch;
+    word-wrap: break-word;
 }
 
 .card > :nth-child(4) {

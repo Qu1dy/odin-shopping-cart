@@ -21,3 +21,20 @@
 .btn:hover {
     color: var(--primary);
 }
+
+@media (width < 600px) {
+    .search {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        > .search-bar {
+            flex: 1;
+        }
+
+        > .btn {
+            position: absolute;
+            right: 12px;
+        }
+    }
+}

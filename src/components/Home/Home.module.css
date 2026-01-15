@@ -20,7 +20,7 @@
 }
 
 .heroImage > img {
-    max-width: 500px;
+    max-width: 250px;
     border-radius: 16px;
     box-shadow: 2px 2px 12px black;
 }

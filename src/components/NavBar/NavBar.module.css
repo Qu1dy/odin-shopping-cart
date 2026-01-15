@@ -13,13 +13,21 @@
     }
 }
 
-.icon {
+.icon,
+.cart {
     color: var(--text);
 }
 
 .total {
     background-color: var(--secondary);
     border-radius: 32px;
-    padding: 2px;
-    font-size: 0.6rem;
+    padding: 2px 4px;
+    font-size: 0.7rem;
+    position: absolute;
+    right: -4px;
+    bottom: -4px;
+}
+
+.cart {
+    position: relative;
 }

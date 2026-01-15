@@ -29,7 +29,7 @@ const SearchBar = ({ onSearch }) => {
                 type="submit"
                 aria-label="Search game"
             >
-                <Search size={20} />
+                <Search size={20} strokeWidth={2} />
             </button>
         </form>
     );

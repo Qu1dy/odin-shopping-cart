@@ -4,6 +4,13 @@
     align-items: center;
     min-height: 3rem;
     background-color: hsl(199, 74%, 4%);
+    width: 100%;
+}
+
+@media (width < 600px) {
+    .footer {
+        min-height: 5rem;
+    }
 }
 
 .footerText {

@@ -17,12 +17,12 @@ const NavBar = ({ totalQuantity }) => {
                     </Link>
                 </li>
                 <li>
-                    <Link to="/cart" className={styles.icon}>
+                    <Link to="/cart" className={styles.cart}>
                         <ShoppingCart size={18} />
+                        <data className={styles.total} value={totalQuantity}>
+                            {totalQuantity}
+                        </data>
                     </Link>
-                    <data className={styles.total} value={totalQuantity}>
-                        {totalQuantity}
-                    </data>
                 </li>
             </ul>
         </nav>
